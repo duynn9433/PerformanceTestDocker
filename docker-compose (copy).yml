@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - "8086:8086" # Mở port 8086 cho InfluxDB
+      - 25826:25826/udp
+    volumes:
+#      - influxdb-data:/var/lib/influxdb
+#      - ./influxdb:/etc/influxdb
+      - ./influxdb/influx_init.iql:/docker-entrypoint-initdb.d/influx_init.iql
+      - ./influxdb/types.db:/usr/share/collectd/types.db:ro
+      - ./influxdb/data:/var/lib/influxdb
+      - ./influxdb/config/:/etc/influxdb/
+    environment:
+      - INFLUXDB_DB=jmeter
+      - INFLUXDB_USER=jmeter
+      - INFLUXDB_USER_PASSWORD=jmeterpassword
+    networks:
+      - jmeter-net
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+#      - grafana-data:/var/lib/grafana
+#      - ./grafana/datasources:/etc/grafana/datasources
+#      - ./grafana/dashboards:/var/lib/grafana/dashboards
+#      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+#      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    env_file:
+      - grafana.env
+    networks:
+      - jmeter-net
+    depends_on:
+      - influxdb
+
+volumes:
+  influxdb-data:
+  grafana-data:
+
+networks:
+  jmeter-net:
+    driver: bridge
+

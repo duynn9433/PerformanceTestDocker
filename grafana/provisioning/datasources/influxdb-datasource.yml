@@ -1,0 +1,24 @@
+apiVersion: 2
+
+# list of datasources that should be deleted from the database
+deleteDatasources:
+  - name: jmeter
+    orgId: 1
+
+datasources:
+  - name: jmeter_result
+    type: influxdb
+    access: proxy
+    database: jmeter_result
+    url: http://influxdb:8086
+    basicAuth: false
+    isDefault: false
+
+  - name: collectd
+    type: influxdb
+    access: proxy
+    database: collectd
+    url: http://influxdb:8086
+    basicAuth: false
+    isDefault: false
+

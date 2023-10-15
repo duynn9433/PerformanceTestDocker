@@ -1,0 +1,22 @@
+2023-10-15 06:38:21,139 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2023-10-15 06:38:21,150 INFO o.a.j.JMeter: Loading user properties from: /home/duynn/Github/PerformanceTestDocker/jmeter-docker/apache-jmeter-5.6.2/bin/user.properties
+2023-10-15 06:38:21,150 INFO o.a.j.JMeter: Loading system properties from: /home/duynn/Github/PerformanceTestDocker/jmeter-docker/apache-jmeter-5.6.2/bin/system.properties
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: Copyright (c) 1998-2023 The Apache Software Foundation
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: Version 5.6.2
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: java.version=1.8.0_382
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: os.name=Linux
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: os.arch=amd64
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: os.version=6.2.0-34-generic
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: file.encoding=UTF-8
+2023-10-15 06:38:21,156 INFO o.a.j.JMeter: java.awt.headless=null
+2023-10-15 06:38:21,157 INFO o.a.j.JMeter: Max memory     =2734686208
+2023-10-15 06:38:21,157 INFO o.a.j.JMeter: Available Processors =8
+2023-10-15 06:38:21,160 INFO o.a.j.JMeter: Default Locale=English (EN)
+2023-10-15 06:38:21,160 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2023-10-15 06:38:21,160 INFO o.a.j.JMeter: JMeterHome=/home/duynn/Github/PerformanceTestDocker/jmeter-docker/apache-jmeter-5.6.2
+2023-10-15 06:38:21,160 INFO o.a.j.JMeter: user.dir  =/home/duynn/Github/PerformanceTestDocker/jmeter-docker
+2023-10-15 06:38:21,160 INFO o.a.j.JMeter: PWD       =/home/duynn/Github/PerformanceTestDocker/jmeter-docker
+2023-10-15 06:38:21,161 INFO o.a.j.JMeter: IP: 127.0.1.1 Name: duynn FullName: duynn
+2023-10-15 06:38:21,175 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2023-10-15 06:38:21,356 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
