@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   influxdb:
-    image: quay.io/influxdb/influxdb:2.7.1
+    image: influxdb:2.7.1
     ports:
       - "8086:8086"
       - 25826:25826/udp
@@ -16,37 +16,23 @@ services:
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-secret-token
     volumes:
       - influxdb-data:/var/lib/influxdb2
-    command: >
-      influx setup \
-        --host http://localhost:8086 \
-        --token my-secret-token \
-        --org MainOrg \
-        --bucket jmeter_bucket \
-        --username jmeter \
-        --password jmeterpassword \
-        --retention 0 --retention-autogen 0
+      - ./tokens:/tokens
     networks:
       - jmeter-net
 
-  grafana:
-    image: grafana/grafana:10.1  # Sử dụng phiên bản Grafana 10.1
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana-data:/var/lib/grafana
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
-    env_file:
-      - grafana.env
-    networks:
-      - jmeter-net
+  init-influxdb:
+    image: influxdb:2.7.1
     depends_on:
       - influxdb
+    volumes:
+      - ./init-influxdb.sh:/mnt/init-influxdb.sh
+      - ./tokens:/tokens
+    networks:
+      - jmeter-net
+    entrypoint: /bin/bash -c "chmod +x /mnt/init-influxdb.sh && /mnt/init-influxdb.sh"
 
 volumes:
   influxdb-data:
-  grafana-data:
-
 networks:
   jmeter-net:
     driver: bridge
-
