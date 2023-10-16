@@ -19,6 +19,7 @@ if [[ $choice == "y" ]]; then
   # Chạy JMeter ở chế độ GUI với X11 forwarding
   sudo docker run \
     --rm \
+    --network jmeter-net \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/.Xauthority:/root/.Xauthority \
@@ -29,6 +30,7 @@ else
   # Chạy JMeter không dùng GUI
   docker run \
     --rm \
+    --network jmeter-net \
     --volume "${volume_path}":${jmeter_path} \
     jmeter:latest \
     -n \

@@ -35,4 +35,4 @@ volumes:
   influxdb-data:
 networks:
   jmeter-net:
-    driver: bridge
+    external: true

@@ -143,7 +143,7 @@
             </elementProp>
             <elementProp name="influxdbUrl" elementType="Argument">
               <stringProp name="Argument.name">influxdbUrl</stringProp>
-              <stringProp name="Argument.value">http://${__P(INFLUXDB_HOST, localhost)}:8086/write?db=jmeter_results</stringProp>
+              <stringProp name="Argument.value">http://localhost:8086</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="application" elementType="Argument">
@@ -178,6 +178,21 @@
             </elementProp>
             <elementProp name="eventTags" elementType="Argument">
               <stringProp name="Argument.name">eventTags</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxdbToken" elementType="Argument">
+              <stringProp name="Argument.name">influxdbToken</stringProp>
+              <stringProp name="Argument.value">my-secret-token</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxdbOrg" elementType="Argument">
+              <stringProp name="Argument.name">influxdbOrg</stringProp>
+              <stringProp name="Argument.value">MainOrg</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxdbBucket" elementType="Argument">
+              <stringProp name="Argument.name">influxdbBucket</stringProp>
+              <stringProp name="Argument.value">jmeter_bucket</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
